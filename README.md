@@ -10,6 +10,8 @@
 
 This is a fork of the original plugin. Rather than having individual machines report into StatusPage, we wanted Sensu check aggregates to be the main generator of information into StatusPage. This took only a small reworking of the original code. Instead of creating StatusPage incidents for client name and check name, the handler will now look for a custom check attribute in the event data and title the StatusPage incident name after that (for ease of understanding of those looking at the StatusPage interface).
 
+Also The Redphone functionality required by this plugin has now been bakes in. So, you no longer have to clone the Redphone repo, build, and install from scratch. Also, proxy address and port have been added to this handler as well as the dependent redphone bits
+
 **handler-statuspage**
 
 Creates an issue on StatusPage.io and (optionally) updates a component status.
@@ -64,10 +66,6 @@ For use of a basic proxy, use "proxy_address" and "proxy_port":
 [Installation and Setup](http://sensu-plugins.io/docs/installation_instructions.html)
 
 ## Notes
-
-The Redphone functionality offered by statuspage.rb and helpers.rb have now been
-incorporated into this gem. So, you no longer have to clone the Redphone repo,
-build, and install from scratch.
 
 To update a component add a `"component_id": "IDHERE"` attribute to the corresponding check definition
 
