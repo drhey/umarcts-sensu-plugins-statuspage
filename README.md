@@ -69,8 +69,6 @@ The Redphone functionality offered by statuspage.rb and helpers.rb have now been
 incorporated into this gem. So, you no longer have to clone the Redphone repo,
 build, and install from scratch.
 
-```
-
 To update a component add a `"component_id": "IDHERE"` attribute to the corresponding check definition
 
 Example:
