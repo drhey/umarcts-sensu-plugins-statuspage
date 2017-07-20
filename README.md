@@ -63,13 +63,10 @@ For use of a basic proxy, use "proxy_address" and "proxy_port":
 
 ## Notes
 
-As of this writing Redphone has not added StatusPage.io support to v0.0.6
-You must manually build and install the gem:
-```
-git clone https://github.com/portertech/redphone.git
-cd redphone
-gem build redphone.gemspec  OR  /opt/sensu/embedded/bin/gem build redphone.gemspec
-gem install redphone-0.0.6.gem  OR  /opt/sensu/embedded/bin/gem install redphone-0.0.6.gem
+The Redphone functionality offered by statuspage.rb and helpers.rb have now been
+incorporated into this gem. So, you no longer have to clone the Redphone repo,
+build, and install from scratch.
+
 ```
 
 To update a component add a `"component_id": "IDHERE"` attribute to the corresponding check definition
