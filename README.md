@@ -114,4 +114,4 @@ To choose the name of your incident that will be reported to StatusPage, simply 
 }      
 ```
 
-The handler is specifically looking for the above the be defined. If it's not, then incident_key won't be defined in the handler and this will cause errors and improper functionality
+The handler is specifically looking for the above to be defined. If it's not, then incident_key won't be defined in the handler and this will cause errors and improper functionality
