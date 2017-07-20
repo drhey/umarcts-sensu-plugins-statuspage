@@ -8,6 +8,8 @@
 
 ## Functionality
 
+This is a fork of the original plugin. Rather than having individual machines report into StatusPage, we wanted Sensu check aggregates to be the main generator of information into StatusPage. This took only a small reworking of the original code. Instead of creating StatusPage incidents for client name and check name, the handler will now look for a custom check attribute in the event data and title the StatusPage incident name after that (for ease of understanding of those looking at the StatusPage interface).
+
 **handler-statuspage**
 
 Creates an issue on StatusPage.io and (optionally) updates a component status.
@@ -106,3 +108,12 @@ Example:
   }
 }
 ```
+To choose the name of your incident that will be reported to StatusPage, simply add a custom attribute like this in your check definition:
+
+```
+"custom": {
+  "incident_name": "Compute Nodes"
+}      
+```
+
+The handler is specifically looking for the above the be defined. If it's not, then incident_key won't be defined in the handler and this will cause errors and improper functionality
