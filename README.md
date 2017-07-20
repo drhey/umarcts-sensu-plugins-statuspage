@@ -108,8 +108,8 @@ Example:
   }
 }
 ```
-To choose the name of your incident that will be reported to StatusPage, simply add a custom attribute like this in your check definition:
 
+To choose the name of your incident that will be reported to StatusPage, simply add a custom attribute like this in your check definition:
 ```
 "custom": {
   "incident_name": "Compute Nodes"
