@@ -107,11 +107,27 @@ Example:
 }
 ```
 
-To choose the name of your incident that will be reported to StatusPage, simply add a custom attribute like this in your check definition:
+To choose the name of your incident that will be reported to StatusPage, simply add a custom attribute (e.g. `"custom": { "incident_name": "What you want the incident to be called" },`) like this in your check definition:
+
+Example:
 ```
-"custom": {
-  "incident_name": "Compute Nodes"
-}      
+{
+  "checks": {
+    "check_keepalive_aggregate": {
+      "command": "check-aggregate.rb -c AGGREGATENAME -C 66 -W 33 -a http://127.0.0.1:4567 -u USER -p PASSWORD",
+      "handle": true,
+      "interval": 30,
+      "occurrences": 5,
+      "handlers": [ "statuspage" ],
+      "component_id": "IDHERE",
+      "custom": {
+        "incident_name": "Compute Nodes"
+      },
+      "refresh": 3600,
+      "standalone": true
+    }
+  }
+}   
 ```
 
 The handler is specifically looking for the above to be defined. If it's not, then incident_key won't be defined in the handler and this will cause errors and improper functionality
