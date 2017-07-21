@@ -4,7 +4,7 @@
 
 This is a fork of the original plugin from https://github.com/sensu-plugins/sensu-plugins-statuspage. Rather than having individual machines report into StatusPage, we wanted Sensu check aggregates to be the main generator of information into StatusPage. This took only a small reworking of the original code. 
 
-Instead of creating StatusPage incidents from information like `@event['client']['name'] + '/' + @event['check']['name']`, the handler will now look for a custom check attribute (`@event['check']['custom']['incident_name']`) in the event data and title the StatusPage incident name after that (for ease of understanding of those looking at the StatusPage interface, i.e. end-users).
+Instead of creating StatusPage incidents from information like `@event['client']['name'] + '/' + @event['check']['name']`, the handler will now look for a custom check attribute (`@event['check']['custom']['incident_name']`) in the event data and title the StatusPage incident name after that (for ease of understanding).
 
 Also The Redphone functionality required by this plugin has now been baked in. One no longer has to clone the Redphone repo, build, and install from scratch. Also, proxy address and port have been added to this handler as well as the dependent Redphone bits.
 
