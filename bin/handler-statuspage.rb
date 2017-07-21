@@ -73,7 +73,7 @@ class StatusPage < Sensu::Handler
   end
 
   def description
-    @event['check']['custom']['description'] || [@event['client']['name'], @event['check']['name'], @event['check']['output']].join(' : ')
+    @event['notification'] || [@event['client']['name'], @event['check']['name'], @event['check']['output']].join(' : ')
   end
 
   def incident_message(status)
