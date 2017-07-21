@@ -1,4 +1,4 @@
-## Sensu-Plugins-statuspage
+## umarcts-sensu-plugins-statuspage
 
 ## Functionality
 
