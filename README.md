@@ -17,8 +17,8 @@ Creates an issue on StatusPage.io and (optionally) updates a component status.
 Sends graphite-style metrics to statuspage.io, for displaying public metrics.  Note, this forks and is not meant for high-throughput.  Rather, it is meant for high-value, low-throughput metrics for display on status page.
 
 ## Files
- * bin/handler-statuspage
- * bin/metrics-statuspageio
+ * bin/umarcts-handler-statuspage
+ * bin/umarcts-metrics-statuspageio
 
 ## Usage
 
@@ -125,3 +125,25 @@ Example:
 ```
 
 The handler is specifically looking for the above to be defined. If it's not, then incident_key won't be defined in the handler and this will cause errors and improper functionality
+
+The ability to add a message to the event has also been implemented here by way of another custom attribute called "description" (e.g. `"custom": { "description": "What you want automatically communicated about the incident" },`)
+
+Example:
+{
+  "checks": {
+    "check_keepalive_aggregate": {
+      "command": "check-aggregate.rb -c AGGREGATENAME -C 66 -W 33 -a http://127.0.0.1:4567 -u USER -p PASSWORD",
+      "handle": true,
+      "interval": 30,
+      "occurrences": 5,
+      "handlers": [ "statuspage" ],
+      "component_id": "IDHERE",
+      "custom": {
+        "incident_name": "Compute Nodes",
+        "description": "Something happened with the compute nodes! We're investigating"
+      },
+      "refresh": 3600,
+      "standalone": true
+    }
+  }
+}   
