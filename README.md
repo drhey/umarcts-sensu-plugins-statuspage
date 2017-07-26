@@ -129,6 +129,7 @@ The handler is specifically looking for the above to be defined. If it's not, th
 The ability to add a message to the event has also been implemented here by way of another custom attribute called "description" (e.g. `"custom": { "description": "What you want automatically communicated about the incident" },`)
 
 Example:
+```
 {
   "checks": {
     "check_keepalive_aggregate": {
@@ -146,4 +147,5 @@ Example:
       "standalone": true
     }
   }
-}   
+}
+```
